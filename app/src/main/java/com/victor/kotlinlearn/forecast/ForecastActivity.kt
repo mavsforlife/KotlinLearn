@@ -5,10 +5,11 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.victor.kotlinlearn.R
+import org.jetbrains.anko.find
 
 class ForecastActivity : AppCompatActivity() {
 
-    private val items = listOf<String>(
+    private val items = listOf(
             "Mon 6/23 - Sunny - 31/17",
             "Tue 6/24 - Foggy - 21/8",
             "Wed 6/25 - Cloudy - 22/17",
@@ -18,11 +19,12 @@ class ForecastActivity : AppCompatActivity() {
             "Sun 6/29 - Sunny - 20/7"
     )
 
+    private val mRvForecast: RecyclerView = find(R.id.rv_forecast)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forecast)
 
-        var rvForecast = findViewById<RecyclerView>(R.id.rv_forecast)
-        rvForecast.layoutManager = LinearLayoutManager(this)
+        mRvForecast.layoutManager = LinearLayoutManager(this)
     }
 }
