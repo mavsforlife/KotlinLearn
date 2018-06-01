@@ -64,9 +64,4 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    //复制数据类
-    val f1 = Forecast(Date(), 27.5f, "Shiny day")
-    val f2 = f1.copy(temperature = 28.5f)
-
-
 }
