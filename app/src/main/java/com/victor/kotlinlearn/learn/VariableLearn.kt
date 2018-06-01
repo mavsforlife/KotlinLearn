@@ -1,6 +1,6 @@
 package com.victor.kotlinlearn.learn
 
-import com.victor.kotlinlearn.model.Forecast
+import com.victor.kotlinlearn.domain.Forecast
 import java.util.*
 
 /**
@@ -23,7 +23,7 @@ class VariableLearn {
 
     val a: Any = 23
 
-    val f1 = Forecast(Date(), 27.5f, "Shinny")
+    val f1 = Forecast("6/27", "Shinny", 26, 17)
     //映射对象到变量中
     private fun testMapVariable() {
         val (date, temperature, details) = f1
