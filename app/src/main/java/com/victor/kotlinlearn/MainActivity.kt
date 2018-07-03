@@ -16,7 +16,6 @@ import org.jetbrains.anko.find
 import org.jetbrains.anko.async
 import org.jetbrains.anko.longToast
 import org.jetbrains.anko.uiThread
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         mTvMsg = find(R.id.message)
 
         mTvMsg?.setText(R.string.hello_kotlin)
-
         mTvMsg?.setOnClickListener{
             val intent = Intent(this, ForecastActivity::class.java)
             startActivity(intent)

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">KotlinLearn</string>
     <string name="hello_kotlin">hello kotlin</string>
+    <string name="go_to_weather">跳转到天气</string>
 </resources>

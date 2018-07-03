@@ -5,7 +5,10 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.victor.kotlinlearn.R
+import com.victor.kotlinlearn.domain.RequestForecastCommand
+import org.jetbrains.anko.async
 import org.jetbrains.anko.find
+import org.jetbrains.anko.uiThread
 
 class ForecastActivity : AppCompatActivity() {
 
@@ -19,12 +22,23 @@ class ForecastActivity : AppCompatActivity() {
             "Sun 6/29 - Sunny - 20/7"
     )
 
-    private val mRvForecast: RecyclerView = find(R.id.rv_forecast)
+    private var mRvForecast: RecyclerView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forecast)
 
-        mRvForecast.layoutManager = LinearLayoutManager(this)
+        mRvForecast = find(R.id.rv_forecast)
+        mRvForecast?.layoutManager = LinearLayoutManager(this)
+        getWeatherInfo()
+    }
+
+    fun getWeatherInfo() {
+        async() {
+            val result = RequestForecastCommand("94043").execute()
+            uiThread {
+                mRvForecast?.adapter = ForecastAdapter(result)
+            }
+        }
     }
 }
