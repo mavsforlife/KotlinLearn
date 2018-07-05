@@ -2,18 +2,14 @@ package com.victor.kotlinlearn
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
+import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
 import android.widget.Toast
 import com.victor.kotlinlearn.forecast.ForecastActivity
-import com.victor.kotlinlearn.model.Forecast
 import com.victor.kotlinlearn.request.RequestLearn
-
-import org.jetbrains.anko.find
-
 import org.jetbrains.anko.async
+import org.jetbrains.anko.find
 import org.jetbrains.anko.longToast
 import org.jetbrains.anko.uiThread
 
